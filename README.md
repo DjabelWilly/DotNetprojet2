@@ -1,2 +1,5 @@
 # DotNetprojet2
-test
+tests unitaires et debug 
+
+## techno
+ASP.NET Core
