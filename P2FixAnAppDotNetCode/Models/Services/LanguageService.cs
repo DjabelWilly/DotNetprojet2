@@ -20,24 +20,26 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Set the culture
         /// </summary>
-        public string SetCulture(string language)
-        {
-            string culture;
+   public string SetCulture(string language)
+{
+    string culture;
 
-            switch (language)
-            {
-                case "French":
-                    culture = "fr";
-                    break;
-                case "Spanish":
-                    culture = "es";
-                    break;
-                default:
-                    culture = "en";
-                    break;
-            }
-            return culture;
-        }
+    switch (language)
+    {
+        case "French":
+            culture = "fr-FR";
+            break;
+        case "Spanish":
+            culture = "es-ES";
+            break;
+        default:
+            culture = "en-GB";
+            break;
+    }
+
+    return culture;
+}
+
 
         /// <summary>
         /// Update the culture cookie
