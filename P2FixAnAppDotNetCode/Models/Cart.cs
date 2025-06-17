@@ -11,7 +11,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// <summary>
         /// Read-only property for display only
         /// </summary>
-        private List<CartLine> _cartLines = new List<CartLine>();
+        private readonly List<CartLine> _cartLines = new List<CartLine>();
 
 
         /// <summary>
@@ -49,8 +49,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
-            return 0.0;
+            return _cartLines.Sum(l => l.Product.Price * l.Quantity);
         }
 
         /// <summary>
@@ -58,8 +57,11 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
-            return 0.0;
+            if (_cartLines.Count == 0)
+                return 0.0;
+
+            return _cartLines.Sum(l => l.Product.Price) / _cartLines.Count;
+
         }
 
         /// <summary>
@@ -67,9 +69,10 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            // TODO implement the method
-            return null;
+            if (productId == 0) return null;
+            return _cartLines.FirstOrDefault(l => l.Product.Id == productId)?.Product;
         }
+
 
         /// <summary>
         /// Get a specific cartline by its index
