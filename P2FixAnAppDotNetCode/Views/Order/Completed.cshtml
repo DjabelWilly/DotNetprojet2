@@ -1,2 +1,8 @@
-﻿<h2>@Localizer["Thanks"]</h2>
+﻿
+<h2>@Localizer["Thanks"]</h2>
 <p>@Localizer["DemoEnding"]</p>
+
+@* Appelle la fonction de redirection vers Product/index *@
+<script>
+    redirectAfterTimeout('@Url.Action("Index", "Product")', 5000);
+</script>
