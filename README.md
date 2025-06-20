@@ -15,10 +15,10 @@ Git
 ### Cloner le dépôt
 
 Ouvrir un terminal ou Git Bash et exécuter :
-
+```bash
 git clone -b dev https://github.com/DjabelWilly/DotNetprojet2/tree/dev
 cd DotNetprojet2
-
+```
 ### Lancer l'application en local
 
 Ouvrir le dossier du projet avec Visual Studio :
