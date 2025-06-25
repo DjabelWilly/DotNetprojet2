@@ -26,7 +26,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
             // changed the return type from array to List<T> and propagate the change
             // throughout the application
             // Convertit le tableau retourné par le repository en liste
-            return _productRepository.GetAllProducts().ToList();
+            return _productRepository.GetAllProducts();
         }
 
         /// <summary>
